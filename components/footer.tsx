@@ -94,7 +94,7 @@ export default function Footer() {
             <h4 className="font-bold text-lg mb-6 text-white">Get in Touch</h4>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-6">
               <motion.a
-                href="tel:+919876543210"
+                href="tel:++919213462165"
                 className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors duration-300 p-3 rounded-lg hover:bg-gray-800"
                 whileHover={{ x: 4 }}
               >

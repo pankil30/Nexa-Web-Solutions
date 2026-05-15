@@ -35,7 +35,7 @@ export default function FAQ() {
   ]
 
   const handleWhatsAppClick = () => {
-    const phoneNumber = '919876543210'
+    const phoneNumber = '+919213462165'
     const message = "Hi! I'm interested in getting a custom website built."
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
 
