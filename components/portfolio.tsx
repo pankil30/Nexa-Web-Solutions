@@ -6,55 +6,83 @@ import { ArrowUpRight } from 'lucide-react'
 export default function Portfolio() {
   const firstRow = [
     {
-      title: 'Neuronix AI',
-      category: 'AI Platform',
-      image:
-        'https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1400&auto=format&fit=crop',
+      title: 'Buty Store',
+      category: 'E-Commerce',
+      image: '/First/a.png',
     },
     {
-      title: 'Lucien Restaurant',
-      category: 'Restaurant',
-      image:
-        'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1400&auto=format&fit=crop',
+      title: 'Buty Store',
+      category: 'E-Commerce',
+      image: '/First/b.png',
     },
     {
-      title: 'Paytech',
-      category: 'Fintech',
-      image:
-        'https://images.unsplash.com/photo-1556740749-887f6717d7e4?q=80&w=1400&auto=format&fit=crop',
+      title: 'Buty Store',
+      category: 'E-Commerce',
+      image: '/First/c.png',
     },
     {
-      title: 'Cyber Security',
-      category: 'Security',
-      image:
-        'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1400&auto=format&fit=crop',
+      title: 'Clothing Store',
+      category: 'E-Commerce',
+      image: '/First/d.png',
+    },
+    {
+      title: 'Dental Clinic',
+      category: 'Medical',
+      image: '/First/e.png',
+    },
+    {
+      title: 'Finance Dashboard',
+      category: 'Finance',
+      image: '/First/f.png',
+    },
+    {
+      title: 'Help Center',
+      category: 'Support',
+      image: '/First/g.png',
+    },
+    {
+      title: 'Yoga Studio',
+      category: 'Health',
+      image: '/First/h.png',
     },
   ]
 
   const secondRow = [
     {
-      title: 'SaaS Platform',
-      category: 'SaaS',
+      title: 'Clothing Store',
+      category: 'E-Commerce',
       image:
-        'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1400&auto=format&fit=crop',
+        '/second/Clothing.png'
     },
     {
-      title: 'Luxury Brand',
-      category: 'Fashion',
+      title: 'Dental Clinic',
+      category: 'Dental',
       image:
-        'https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1400&auto=format&fit=crop',
+        '/second/Dental.png'
     },
     {
-      title: 'Creative Studio',
-      category: 'Agency',
+      title: 'Real Estate Studio',
+      category: 'Real Estate',
       image:
-        'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1400&auto=format&fit=crop',
+        '/second/Real.png',
     },
     {
-      title: 'Modern Store',
-      category: 'Ecommerce',
+      title: 'Sunglasses',
+      category: 'E-Commerce',
       image:
-        'https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1400&auto=format&fit=crop',
+        '/second/Sunglassis.png',
+    },
+    {
+      title: 'Travel Agency',
+      category: 'E-Commerce',
+      image:
+        '/second/travel.png',
+    },
+    {
+      title: 'Yoga Studio',
+      category: 'Health',
+      image:
+        '/second/Yoga.png',
     },
   ]
 
@@ -69,7 +97,7 @@ export default function Portfolio() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-black leading-tight">
+          <h2 className="text-2xl sm:text-4xl md:text-6xl font-black leading-tight">
             Websites We Have
             <span className="block bg-gradient-to-r from-purple-700 to-pink-600 bg-clip-text text-transparent">
               Built

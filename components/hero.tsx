@@ -19,6 +19,21 @@ export default function Hero() {
   const [wordIndex, setWordIndex] = useState(0)
   const [isDeleting, setIsDeleting] = useState(false)
 
+  const scrollToPortfolio = () => {
+    const el = document.getElementById('portfolio')
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }
+
+  const handleWhatsAppClick = () => {
+    const phoneNumber = '919876543210'
+    const message = 'Hi! I\'m interested in getting a custom website built.'
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
+
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer')
+  }
+
   useEffect(() => {
     const currentWord = words[wordIndex]
 
@@ -46,7 +61,7 @@ export default function Hero() {
   }, [text, isDeleting, text.length, wordIndex, words])
 
   return (
-    <section id="home" className="min-h-screen pt-24 pb-12 px-4 sm:px-6 lg:px-8 flex flex-col justify-center bg-gradient-to-br from-white via-purple-50 to-pink-50 scroll-mt-24">
+    <section id="home" className="min-h-screen pt-20 sm:pt-24 pb-28 sm:pb-12 px-4 sm:px-6 lg:px-8 flex flex-col justify-center bg-gradient-to-br from-white via-purple-50 to-pink-50 scroll-mt-24">
       <div className="max-w-5xl mx-auto w-full">
         {/* Badge */}
         <motion.div
@@ -64,7 +79,7 @@ export default function Hero() {
 
         {/* Main Heading */}
         <div className="text-center mb-8">
-          <h1 className="text-5xl md:text-7xl font-black leading-tight mb-6">
+          <h1 className="text-3xl sm:text-5xl md:text-7xl font-black leading-tight mb-6">
             <div className="mb-4">
               <span className="text-black">We </span>
               <motion.span
@@ -80,9 +95,9 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.6 }}
-              className="bg-gradient-to-r from-purple-200 to-pink-100 px-4 py-2 rounded-lg inline-block min-h-[70px] sm:min-h-[90px]"
+              className="bg-gradient-to-r from-purple-200 to-pink-100 px-3 py-2 sm:px-4 sm:py-3 rounded-lg inline-block min-h-[44px] sm:min-h-[70px]"
             >
-              <span className="text-black">
+              <span className="text-black text-lg sm:text-2xl md:text-3xl">
                 {text}
                 <span className="animate-pulse">|</span>
               </span>
@@ -139,6 +154,8 @@ export default function Hero() {
           <motion.button
             whileHover={{ scale: 1.05, boxShadow: '0 20px 40px rgba(124, 58, 237, 0.3)' }}
             whileTap={{ scale: 0.98 }}
+            onClick={handleWhatsAppClick}
+            type="button"
             className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-purple-700 to-pink-600 text-white rounded-full font-semibold text-base sm:text-lg transition-all duration-300 w-full sm:w-auto"
           >
             Chat on WhatsApp →
@@ -146,6 +163,8 @@ export default function Hero() {
           <motion.button
             whileHover={{ scale: 1.05, backgroundColor: '#1a1a1a', color: '#ffffff' }}
             whileTap={{ scale: 0.98 }}
+            onClick={scrollToPortfolio}
+            aria-label="See our work"
             className="px-6 sm:px-8 py-3 sm:py-4 border-2 border-gray-900 text-gray-900 rounded-full font-semibold text-base sm:text-lg transition-all duration-300 w-full sm:w-auto"
           >
             See Our Work ↓

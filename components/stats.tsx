@@ -6,7 +6,7 @@ export default function Stats() {
   const stats = [
     { number: '250+', label: 'Businesses Served' },
     { number: '500+', label: 'Projects Completed' },
-    { number: '98%', label: 'Client Satisfaction' },
+    { number: '100%', label: 'Client Satisfaction' },
     { number: '5x', label: 'Average ROI' },
   ]
 

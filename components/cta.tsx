@@ -3,6 +3,14 @@
 import { motion } from 'framer-motion'
 
 export default function CTA() {
+  const handleWhatsAppClick = () => {
+    const phoneNumber = '919876543210'
+    const message = 'Hi! I\'m interested in getting a custom website built.'
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
+
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer')
+  }
+
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-700 via-purple-600 to-pink-600">
       <div className="max-w-4xl mx-auto">
@@ -42,7 +50,7 @@ export default function CTA() {
           viewport={{ once: true }}
           className="relative z-10 text-center"
         >
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-white mb-6 leading-tight\">
+          <h2 className="text-2xl sm:text-4xl md:text-6xl font-black text-white mb-6 leading-tight\">
             Ready to Build Your
             <br />
             Premium Website?
@@ -63,17 +71,13 @@ export default function CTA() {
             <motion.button
               whileHover={{ scale: 1.08, boxShadow: '0 25px 50px rgba(255,255,255,0.3)' }}
               whileTap={{ scale: 0.95 }}
+              onClick={handleWhatsAppClick}
+              type="button"
               className="px-6 sm:px-8 py-3 sm:py-4 bg-white text-purple-700 rounded-full font-bold text-base sm:text-lg transition-all duration-300"
             >
               Chat on WhatsApp
             </motion.button>
-            <motion.button
-              whileHover={{ scale: 1.08, backgroundColor: 'rgba(255,255,255,0.2)' }}
-              whileTap={{ scale: 0.95 }}
-              className="px-6 sm:px-8 py-3 sm:py-4 border-2 border-white text-white rounded-full font-bold text-base sm:text-lg transition-all duration-300 hover:text-purple-700"
-            >
-              Schedule a Call
-            </motion.button>
+
           </motion.div>
 
           {/* Stats */}

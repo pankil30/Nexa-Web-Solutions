@@ -42,7 +42,7 @@ export default function Process() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-black mb-4">
+          <h2 className="text-2xl sm:text-4xl md:text-6xl font-black mb-4">
             Our Process
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">

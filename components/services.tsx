@@ -61,7 +61,7 @@ export default function Services() {
           transition={{ duration: 0.5 }}
           className="text-center mb-14"
         >
-          <h2 className="text-4xl md:text-6xl font-black tracking-tight">
+          <h2 className="text-2xl sm:text-4xl md:text-6xl font-black tracking-tight">
             Our{' '}
             <span className="bg-gradient-to-r from-purple-700 to-pink-500 bg-clip-text text-transparent">
               Services

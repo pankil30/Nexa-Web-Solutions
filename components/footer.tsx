@@ -104,7 +104,7 @@ export default function Footer() {
                 whileHover={{ x: 4 }}
               >
                 <Phone className="w-5 h-5 text-purple-400 flex-shrink-0" />
-                <span>+91 98765 43210</span>
+                <span>+91 921-346-2165</span>
               </motion.a>
               <motion.a
                 href="mailto:hello@Nexa Web Solutions.com"
