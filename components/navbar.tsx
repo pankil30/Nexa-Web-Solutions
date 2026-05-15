@@ -50,7 +50,7 @@ export default function Navbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="text-2xl font-bold"
+            className="font-bold"
           >
             <img
               src="/n.png"
@@ -58,13 +58,12 @@ export default function Navbar() {
               className="w-10 h-10 sm:w-12 sm:h-12 inline-block mr-2"
             />
             <motion.span
-              className="hidden sm:inline bg-gradient-to-r from-purple-600 via-pink-500 to-indigo-600 bg-clip-text text-transparent text-2xl font-extrabold"
+              className="bg-gradient-to-r from-purple-600 via-pink-500 to-indigo-600 bg-clip-text text-transparent text-lg sm:text-2xl font-extrabold"
               whileHover={{ scale: 1.03 }}
               transition={{ type: 'spring', stiffness: 300 }}
             >
               Nexa Web Solutions
             </motion.span>
-            <motion.span className="sm:hidden text-purple-700 font-extrabold text-lg">Nexa</motion.span>
           </motion.div>
 
           {/* Desktop Menu */}
