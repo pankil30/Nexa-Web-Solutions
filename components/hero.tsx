@@ -60,6 +60,29 @@ export default function Hero() {
     return () => clearTimeout(timeout)
   }, [text, isDeleting, text.length, wordIndex, words])
 
+  // Ensure the hero section is shown first on page load/refresh when there's no hash
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+
+    if ('scrollRestoration' in window.history) {
+      try {
+        window.history.scrollRestoration = 'manual'
+      } catch (e) {
+        // ignore
+      }
+    }
+
+    if (!window.location.hash) {
+      const el = document.getElementById('home')
+      if (el) {
+        // Defer slightly to allow layout/hydration to settle
+        setTimeout(() => el.scrollIntoView({ behavior: 'auto', block: 'start' }), 0)
+      } else {
+        window.scrollTo({ top: 0, behavior: 'auto' })
+      }
+    }
+  }, [])
+
   return (
     <section id="home" className="min-h-screen pt-20 sm:pt-24 pb-28 sm:pb-12 px-4 sm:px-6 lg:px-8 flex flex-col justify-center bg-gradient-to-br from-white via-purple-50 to-pink-50 scroll-mt-24">
       <div className="max-w-5xl mx-auto w-full">
@@ -95,11 +118,11 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.6 }}
-              className="bg-gradient-to-r from-purple-200 to-pink-100 px-3 py-2 sm:px-4 sm:py-3 rounded-lg inline-block min-h-[44px] sm:min-h-[70px]"
+              className="bg-gradient-to-r from-purple-200 to-pink-100 px-4 py-3 sm:px-6 sm:py-4 rounded-lg inline-block min-h-[56px] sm:min-h-[80px] md:min-h-[96px]"
             >
-              <span className="text-black text-lg sm:text-2xl md:text-3xl">
+              <span className="text-black text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight" aria-live="polite">
                 {text}
-                <span className="animate-pulse">|</span>
+                <span className="inline-block ml-2 animate-pulse text-2xl sm:text-4xl md:text-5xl lg:text-6xl">|</span>
               </span>
             </motion.div>
             <div className="mt-4">

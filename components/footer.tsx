@@ -8,8 +8,7 @@ export default function Footer() {
 
   const footerLinks = {
     Services: ['Landing Pages', 'Business Websites', 'E-commerce', 'Custom Development', 'Maintenance'],
-    Company: ['About Us', 'Our Work', 'Blog', 'Careers', 'Contact'],
-    Legal: ['Privacy Policy', 'Terms of Service', 'Cookie Policy', 'Disclaimer'],
+    Company: [{ name: 'About Us', href: '#process' }, { name: 'Our Work', href: '#portfolio' }, { name: 'Services', href: '#services' }, { name: 'Contact', href: '#contact' }, { name: 'FAQ', href: '#clients' }],
   }
 
   return (
@@ -18,28 +17,23 @@ export default function Footer() {
       <div className="px-4 sm:px-6 lg:px-8 py-16">
         <div className="max-w-7xl mx-auto">
           {/* Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-8 sm:gap-12 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-12 mb-12 items-start">
             {/* Brand */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
+              className="md:col-span-1 md:max-w-xs"
             >
-              <h3 className="text-xl sm:text-2xl font-bold mb-4">
+              <h1 className="text-2xl sm:text-3xl md:text-3xl font-extrabold mb-4">
                 <motion.span
-                  className="text-purple-400"
+                  className="inline-block whitespace-nowrap bg-gradient-to-r from-purple-300 via-purple-400 to-pink-400 bg-clip-text text-transparent"
                   whileHover={{ color: '#c084fc' }}
                 >
-                  Quick
+                  Nexa Web Solutions
                 </motion.span>
-                <motion.span
-                  className="text-pink-400"
-                  whileHover={{ color: '#f472b6' }}
-                >
-                  Stack
-                </motion.span>
-              </h3>
+              </h1>
               <p className="text-gray-400 mb-6 leading-relaxed">
                 Building premium websites that drive growth and deliver results.
               </p>
@@ -67,19 +61,20 @@ export default function Footer() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: colIndex * 0.1, duration: 0.6 }}
                 viewport={{ once: true }}
+                className="md:col-span-1"
               >
                 <h4 className="font-bold text-lg mb-6 text-white">{category}</h4>
                 <ul className="space-y-3">
                   {links.map((link) => (
                     <motion.li
-                      key={link}
+                      key={typeof link === 'string' ? link : link.href}
                       whileHover={{ x: 4 }}
                     >
                       <a
-                        href="#"
+                        href={typeof link === 'string' ? '#' : link.href}
                         className="text-gray-400 hover:text-purple-400 transition-colors duration-300 font-medium"
                       >
-                        {link}
+                        {typeof link === 'string' ? link : link.name}
                       </a>
                     </motion.li>
                   ))}
@@ -107,16 +102,16 @@ export default function Footer() {
                 <span>+91 921-346-2165</span>
               </motion.a>
               <motion.a
-                href="mailto:hello@Nexa Web Solutions.com"
+                href="mailto:hello@nexawebsolutions.com"
                 className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors duration-300 p-3 rounded-lg hover:bg-gray-800"
                 whileHover={{ x: 4 }}
               >
                 <Mail className="w-5 h-5 text-purple-400 flex-shrink-0" />
-                <span>hello@Nexa Web Solutions.com</span>
+                <span>hello@nexawebsolutions.com</span>
               </motion.a>
               <div className="flex items-center gap-3 text-gray-400 p-3 rounded-lg">
                 <MapPin className="w-5 h-5 text-purple-400 flex-shrink-0" />
-                <span>Bangalore, India</span>
+                <span>Gujarat, India</span>
               </div>
             </div>
           </motion.div>

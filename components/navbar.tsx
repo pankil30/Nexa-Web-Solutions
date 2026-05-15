@@ -32,7 +32,11 @@ export default function Navbar() {
   }, {
     name: 'Contact',
     href: '#contact',
-  }]
+  },
+{
+    name: 'FAQ',
+    href: '#clients',
+  }, ]
 
 
 

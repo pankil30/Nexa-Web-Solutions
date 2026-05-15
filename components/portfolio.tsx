@@ -1,24 +1,19 @@
+
+
+
+
+
 'use client'
 
+import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { ArrowUpRight } from 'lucide-react'
 
 export default function Portfolio() {
   const firstRow = [
     {
-      title: 'Buty Store',
+      title: 'Beauty Store',
       category: 'E-Commerce',
       image: '/First/a.png',
-    },
-    {
-      title: 'Buty Store',
-      category: 'E-Commerce',
-      image: '/First/b.png',
-    },
-    {
-      title: 'Buty Store',
-      category: 'E-Commerce',
-      image: '/First/c.png',
     },
     {
       title: 'Clothing Store',
@@ -36,7 +31,7 @@ export default function Portfolio() {
       image: '/First/f.png',
     },
     {
-      title: 'Help Center',
+      title: 'Fitness Center',
       category: 'Support',
       image: '/First/g.png',
     },
@@ -87,28 +82,18 @@ export default function Portfolio() {
   ]
 
   return (
-    <section id="portfolio" className="py-20 bg-white overflow-hidden scroll-mt-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* HEADING */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-2xl sm:text-4xl md:text-6xl font-black leading-tight">
-            Websites We Have
-            <span className="block bg-gradient-to-r from-purple-700 to-pink-600 bg-clip-text text-transparent">
-              Built
-            </span>
-          </h2>
-
-          <p className="mt-6 text-gray-600 text-base sm:text-lg max-w-2xl mx-auto px-2">
-            Premium landing pages, ecommerce stores, and business
-            websites designed to convert visitors into customers.
-          </p>
-        </motion.div>
+    <section
+      id="portfolio"
+      className="py-20 bg-white overflow-hidden"
+    >
+      {/* HEADING */}
+      <div className="text-center mb-14 px-4">
+        <h2 className="text-3xl sm:text-5xl md:text-6xl font-black">
+          Our Latest
+          <span className="block bg-gradient-to-r from-purple-700 to-pink-600 bg-clip-text text-transparent">
+            Projects
+          </span>
+        </h2>
       </div>
 
       {/* FIRST ROW */}
@@ -125,31 +110,26 @@ export default function Portfolio() {
           {[...firstRow, ...firstRow].map((project, index) => (
             <div
               key={index}
-              className="relative w-[280px] sm:w-[320px] md:w-[420px] h-[180px] sm:h-[220px] md:h-[280px] rounded-3xl overflow-hidden shrink-0 group"
+              className="relative w-[320px] sm:w-[420px] md:w-[500px] h-[220px] sm:h-[280px] md:h-[300px] rounded-3xl overflow-hidden shrink-0"
             >
-              {/* IMAGE */}
-              <img
+              <Image
                 src={project.image}
                 alt={project.title}
-                className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                fill
+                priority={index < 2}
+                sizes="(max-width:768px) 100vw, 50vw"
+                className="object-fill"
               />
 
-              {/* OVERLAY */}
-              <div className="absolute inset-0 bg-black/40" />
+              <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-transparent" />
 
-              {/* CONTENT */}
-              <div className="relative z-10 h-full p-6 flex flex-col justify-between text-white">
-                <span className="text-xs font-semibold bg-white/20 px-3 py-1 rounded-full w-fit">
+              <div className="absolute inset-0 z-10 text-white">
+                <span className="absolute top-4 left-4 inline-flex rounded-full bg-white/20 px-3 py-1 text-xs font-semibold text-purple-100 backdrop-blur-sm">
                   {project.category}
                 </span>
-
-                <div className="flex items-end justify-between">
-                  <h3 className="text-2xl md:text-3xl font-bold">
-                    {project.title}
-                  </h3>
-
-                  <ArrowUpRight className="w-7 h-7 opacity-0 group-hover:opacity-100 transition-all duration-300" />
-                </div>
+                <h3 className="absolute bottom-4 left-4 right-4 text-2xl font-bold leading-tight text-white sm:text-3xl">
+                  {project.title}
+                </h3>
               </div>
             </div>
           ))}
@@ -161,40 +141,34 @@ export default function Portfolio() {
         <motion.div
           animate={{ x: ['-50%', '0%'] }}
           transition={{
-            duration: 20,
+            duration: 22,
             repeat: Infinity,
             ease: 'linear',
           }}
-          className="flex gap-4 w-max"
+          className="flex gap-5 w-max"
         >
           {[...secondRow, ...secondRow].map((project, index) => (
             <div
               key={index}
-              className="relative w-[240px] md:w-[300px] h-[500px] md:h-[500px] rounded-2xl overflow-hidden shrink-0 group"
+              className="relative w-[260px] sm:w-[350px] md:w-[340px] h-[600px] md:h-[650px] rounded-3xl overflow-hidden shrink-0"
             >
-              {/* IMAGE */}
-              <img
+              <Image
                 src={project.image}
                 alt={project.title}
-                className="absolute inset-0 w-full h-full object-cover"
+                fill
+                sizes="(max-width:768px) 100vw, 33vw"
+                className="object-fill"
               />
 
-              {/* OVERLAY */}
-              <div className="absolute inset-0 bg-black/40" />
+              <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-transparent" />
 
-              {/* CONTENT */}
-              <div className="relative z-10 h-full p-4 flex flex-col justify-between text-white">
-                <span className="text-[10px] md:text-xs font-semibold bg-white/20 px-2 py-1 rounded-full w-fit">
+              <div className="absolute inset-0 z-10 text-white">
+                <span className="absolute top-4 left-4 inline-flex rounded-full bg-white/20 px-3 py-1 text-xs font-semibold text-purple-100 backdrop-blur-sm">
                   {project.category}
                 </span>
-
-                <div className="flex items-end justify-between">
-                  <h3 className="text-lg md:text-xl font-bold leading-tight">
-                    {project.title}
-                  </h3>
-
-                  <ArrowUpRight className="w-5 h-5 md:w-6 md:h-6" />
-                </div>
+                <h3 className="absolute bottom-4 left-4 right-4 text-xl font-bold leading-tight text-white sm:text-2xl">
+                  {project.title}
+                </h3>
               </div>
             </div>
           ))}

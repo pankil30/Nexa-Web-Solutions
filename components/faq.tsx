@@ -34,8 +34,18 @@ export default function FAQ() {
     },
   ]
 
+  const handleWhatsAppClick = () => {
+    const phoneNumber = '919876543210'
+    const message = "Hi! I'm interested in getting a custom website built."
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
+
+    if (typeof window !== 'undefined') {
+      window.open(whatsappUrl, '_blank', 'noopener,noreferrer')
+    }
+  }
+
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+    <section id="clients" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-4xl mx-auto">
         {/* Section Header */}
         <motion.div
@@ -45,10 +55,10 @@ export default function FAQ() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-2xl sm:text-4xl md:text-6xl font-black mb-4">
+          <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-6xl font-black mb-4">
             Frequently Asked Questions
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-gray-600">
+          <p className="text-sm sm:text-base md:text-lg text-gray-600">
             Everything you need to know about our services
           </p>
         </motion.div>
@@ -66,13 +76,13 @@ export default function FAQ() {
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className={`w-full text-left p-4 sm:p-6 rounded-xl border-2 transition-all duration-300 ${openIndex === index
+                className={`w-full text-left px-3 py-3 sm:px-6 sm:py-6 rounded-xl border-2 transition-all duration-300 ${openIndex === index
                   ? 'border-purple-500 bg-purple-50'
                   : 'border-gray-200 hover:border-purple-300 hover:bg-purple-50/50'
                   }`}
               >
                 <div className="flex items-center justify-between">
-                  <h3 className={`text-lg font-bold transition-colors duration-300 ${openIndex === index ? 'text-purple-900' : 'text-gray-900'
+                  <h3 className={`text-base sm:text-lg font-bold transition-colors duration-300 ${openIndex === index ? 'text-purple-900' : 'text-gray-900'
                     }`}>
                     {faq.question}
                   </h3>
@@ -99,7 +109,7 @@ export default function FAQ() {
                   transition={{ duration: 0.3 }}
                   className="overflow-hidden"
                 >
-                  <p className="text-gray-700 mt-4 leading-relaxed font-medium">
+                  <p className="text-gray-700 mt-4 leading-relaxed font-medium text-sm sm:text-base">
                     {faq.answer}
                   </p>
                 </motion.div>
@@ -118,17 +128,18 @@ export default function FAQ() {
           className="mt-16 text-center p-8 bg-gradient-to-br from-purple-100 via-purple-50 to-pink-100 rounded-2xl border border-purple-200 shadow-md hover:shadow-xl transition-all duration-300"
         >
           <motion.h3
-            className="text-2xl font-bold mb-4 text-purple-900"
+            className="text-xl sm:text-2xl font-bold mb-4 text-purple-900"
             whileHover={{ scale: 1.05 }}
           >
             Still have questions?
           </motion.h3>
-          <p className="text-gray-700 mb-6 font-medium">
+          <p className="text-gray-700 mb-6 font-medium text-sm sm:text-base">
             Can&apos;t find the answer you&apos;re looking for? Please reach out to us.
           </p>
           <motion.button
             whileHover={{ scale: 1.08, boxShadow: '0 20px 40px rgba(124, 58, 237, 0.3)' }}
             whileTap={{ scale: 0.95 }}
+            onClick={handleWhatsAppClick}
             className="px-8 py-3 bg-gradient-to-r from-purple-700 to-pink-600 text-white rounded-full font-bold transition-all duration-300"
           >
             Get In Touch
