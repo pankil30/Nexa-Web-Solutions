@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 
 export default function WhatsAppButton() {
   const handleWhatsAppClick = () => {
-    const phoneNumber = '+919213462163'
+    const phoneNumber = '+919213462165'
     const message = 'Hi! I&apos;m interested in getting a custom website built.'
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
     window.open(whatsappUrl, '_blank')
